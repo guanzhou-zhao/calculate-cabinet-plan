@@ -1,37 +1,100 @@
 <!doctype html>
 <html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="manifest" href="site.webmanifest">
-        <link rel="apple-touch-icon" href="icon.png">
-        <!-- Place favicon.ico in the root directory -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-    </head>
-    <body>
-        <!--[if lte IE 9]>
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+    <!-- Add your site or application content here -->
+    <!-- <p>Hello world! This is HTML5 Boilerplate.</p> -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')
+    </script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
 
-        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-        <script>
-            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
-        </script>
-        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
-    </body>
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+        window.ga = function() {
+            ga.q.push(arguments)
+        };
+        ga.q = [];
+        ga.l = +new Date;
+        ga('create', 'UA-XXXXX-Y', 'auto');
+        ga('send', 'pageview')
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+    <div class="l-top ctl">
+        <div class="ctl-part">
+            <span class="ctl-part-header">Business info</span>
+            <div class="ctl-part-inputs">
+                <input type="text" name="business-code" placeholder="business code" />
+                <input type="text" name="lot-num" placeholder="lot number" />
+                <input type="text" name="customer-name" placeholder="customer name" />
+                <input type="text" name="board-color" placeholder="18mm board color" />
+            </div>
+        </div>
+        <div class="ctl-part">
+            <span class="ctl-part-header">Top or Bottom Cabinet</span>
+            <div class="ctl-part-inputs">
+                <input type="button" value="Top Cabinet" />
+                <input type="button" value="Bottom Cabinet" />
+            </div>
+        </div>
+        <div class="ctl-part">
+            <span class="ctl-part-header">Cabinet Type</span>
+            <div class="ctl-part-inputs">
+                <input type="button" value="drawer cabinet" />
+                <input type="button" value="open shelf cabinet" />
+                <input type="button" value="fixed shelf cabinet" />
+                <input type="button" value="corner cabinet" />
+                <input type="button" value="bin cabinet" />
+                <input type="button" value="plain cabinet (microware or fridge-top cabinet)" />
+            </div>
+        </div>
+        <div class="ctl-part">
+            <span class="ctl-part-header">Door Type</span>
+            <div class="ctl-part-inputs">
+                <input type="button" value="two doors (left and right open)" />
+                <input type="button" value="single door (left or right open)" />
+                <input type="button" value="single door (tilt open)" />
+                <input type="button" value="single door tilt open (two pieces)" />
+            </div>
+        </div>
+        <div class="ctl-part">
+            <span class="ctl-part-header">Dimension of Cabinet</span>
+            <div class="ctl-part-inputs">
+                <input type="number" placeholder="Cabinet Width">
+                <input type="number" placeholder="Cabinet Depth">
+                <input type="number" placeholder="Cabinet Height">
+            </div>
+        </div>
+        <div class="ctl-part">
+            <span class="ctl-part-header">Operations</span>
+            <div class="ctl-part-inputs">
+                <input type="button" value="Calculate">
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>
