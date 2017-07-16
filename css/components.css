@@ -1,0 +1,31 @@
+body, .ctl, .lists {
+  margin: 5px;
+  padding: 5px;
+}
+
+body {
+  border: 1px solid #000;
+}
+
+.ctl {
+  border: 1px solid #f00;
+}
+
+.ctl-part {
+  margin-bottom: 2px;
+  border: 1px solid #880;
+}
+
+.lists {
+  border: 1px solid #f0f;
+}
+
+.lists-menu-item {
+  margin-bottom: 2px;
+  border: 1px solid #808;
+}
+
+.list {
+  margin-bottom: 2px;
+  border: 1px solid #0ff;
+}

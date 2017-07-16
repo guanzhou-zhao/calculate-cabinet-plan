@@ -1,0 +1,34 @@
+{
+  "name": "calculate-cabinet-plan",
+  "version": "1.0.0",
+  "description": "A web app for calculating cabinet materials plan which is printable and savable.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack --config webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guanzhou-zhao/calculate-cabinet-plan.git"
+  },
+  "author": "@guanzhou-zhao",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "bugs": {
+    "url": "https://github.com/guanzhou-zhao/calculate-cabinet-plan/issues"
+  },
+  "homepage": "https://github.com/guanzhou-zhao/calculate-cabinet-plan#readme",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "webpack": "^3.2.0",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1"
+  }
+}
