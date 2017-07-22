@@ -2,56 +2,58 @@ import React, { Component } from 'react'
 
 export default class ControlForm extends Component {
   render() {
+    var customer = this.props.customer;
+    var calcInfo = this.props.calcInfo;
     return (
       <div className="l-top ctl">
           <div className="ctl-part">
               <span className="ctl-part-header">Business info</span>
               <div className="ctl-part-inputs">
-                  <input type="text" name="business-code" placeholder="business code" />
-                  <input type="text" name="lot-num" placeholder="lot number" />
-                  <input type="text" name="customer-name" placeholder="customer name" />
-                  <input type="text" name="board-color" placeholder="18mm board color" />
+                  <input type="text" name="business-code" placeholder="business code" defaultValue={customer.code}/>
+                  <input type="text" name="lot-num" placeholder="lot number" defaultValue={customer.lotNum}/>
+                  <input type="text" name="customer-name" placeholder="customer name" defaultValue={customer.name}/>
+                  <input type="text" name="board-color" placeholder="18mm board color" defaultValue={customer.colorBoard[0].color}/>
               </div>
           </div>
           <div className="ctl-part">
               <span className="ctl-part-header">Top or Bottom Cabinet</span>
               <div className="ctl-part-inputs">
-                  <input type="button" value="Top Cabinet" />
-                  <input type="button" value="Bottom Cabinet" />
+                  <input type="button" defaultValue="Top Cabinet" className={calcInfo.isGround ? ' ' : 'button-isActive'}/>
+                  <input type="button" defaultValue="Bottom Cabinet" className={calcInfo.isGround ? 'button-isActive' : ''}/>
               </div>
           </div>
           <div className="ctl-part">
               <span className="ctl-part-header">Cabinet Type</span>
               <div className="ctl-part-inputs">
-                  <input type="button" value="drawer cabinet" />
-                  <input type="button" value="open shelf cabinet" />
-                  <input type="button" value="fixed shelf cabinet" />
-                  <input type="button" value="corner cabinet" />
-                  <input type="button" value="bin cabinet" />
-                  <input type="button" value="plain cabinet (microware or fridge-top cabinet)" />
+                  <input type="button" defaultValue="drawer cabinet" className={calcInfo.cabType == 'dr' ? 'button-isActive' : ''}/>
+                  <input type="button" defaultValue="open shelf cabinet" className={calcInfo.cabType == 'open-shelf' ? 'button-isActive' : ''}/>
+                  <input type="button" defaultValue="fixed shelf cabinet" className={calcInfo.cabType == 'fixed-shelf' ? 'button-isActive' : ''}/>
+                  <input type="button" defaultValue="corner cabinet" className={calcInfo.cabType == 'corner' ? 'button-isActive' : ''}/>
+                  <input type="button" defaultValue="bin cabinet" className={calcInfo.cabType == 'bin' ? 'button-isActive' : ''}/>
+                  <input type="button" defaultValue="plain cabinet (microware or fridge-top cabinet)" className={calcInfo.cabType == 'plain' ? 'button-isActive' : ''}/>
               </div>
           </div>
           <div className="ctl-part">
               <span className="ctl-part-header">Door Type</span>
               <div className="ctl-part-inputs">
-                  <input type="button" value="two doors (left and right open)" />
-                  <input type="button" value="single door (left or right open)" />
-                  <input type="button" value="single door (tilt open)" />
-                  <input type="button" value="single door tilt open (two pieces)" />
+                  <input type="button" defaultValue="two doors (left and right open)" className={calcInfo.doorType == 'two' ? 'button-isActive' : ''}/>
+                  <input type="button" defaultValue="single door (left or right open)" className={calcInfo.doorType == 'single' ? 'button-isActive' : ''}/>
+                  <input type="button" defaultValue="single door (tilt open)" className={calcInfo.doorType == 'tilt' ? 'button-isActive' : ''}/>
+                  <input type="button" defaultValue="single door tilt open (two pieces)" className={calcInfo.doorType == 'tilt2' ? 'button-isActive' : ''}/>
               </div>
           </div>
           <div className="ctl-part">
               <span className="ctl-part-header">Dimension of Cabinet</span>
               <div className="ctl-part-inputs">
-                  <input type="number" placeholder="Cabinet Width" />
-                  <input type="number" placeholder="Cabinet Depth" />
-                  <input type="number" placeholder="Cabinet Height" />
+                  <input type="number" placeholder="Cabinet Width" defaultValue={calcInfo.dimension.width}/>
+                  <input type="number" placeholder="Cabinet Height" defaultValue={calcInfo.dimension.height}/>
+                  <input type="number" placeholder="Cabinet Depth" defaultValue={calcInfo.dimension.depth}/>
               </div>
           </div>
           <div className="ctl-part">
               <span className="ctl-part-header">Operations</span>
               <div className="ctl-part-inputs">
-                  <input type="button" value="Calculate"/>
+                  <input type="button" defaultValue="Calculate"/>
               </div>
           </div>
       </div>
