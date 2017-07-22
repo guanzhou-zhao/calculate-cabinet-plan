@@ -107,9 +107,235 @@ var state = {
             cabType: 'open-shelf'
           }
         },
+        {
+          qty: 1,
+          desc: 'door right',
+          cutHt: 706,
+          cutWd: 393.5,
+          finHt: 710,
+          finWd: 397.5,
+          material: 'Doors',
+          edge: {
+            L: true,
+            R: true,
+            T: true,
+            B: true
+          },
+          cabInfo: {
+            cabNum: '1',
+            cabDimension: {
+              width: 800,
+              height: 740,
+              depth: 620
+            },
+            cabType: 'open-shelf'
+          }
+        },
+        {
+          qty: 1,
+          desc: 'end',
+          cutHt: 740,
+          cutWd: 583,
+          finHt: 740,
+          finWd: 584,
+          material: 'WHITE16',
+          edge: {
+            L: true,
+            R: false,
+            T: false,
+            B: false
+          },
+          cabInfo: {
+            cabNum: '1',
+            cabDimension: {
+              width: 800,
+              height: 740,
+              depth: 620
+            },
+            cabType: 'open-shelf'
+          }
+        },
+        {
+          qty: 1,
+          desc: 'end',
+          cutHt: 740,
+          cutWd: 583,
+          finHt: 740,
+          finWd: 584,
+          material: 'WHITE16',
+          edge: {
+            L: false,
+            R: true,
+            T: false,
+            B: false
+          },
+          cabInfo: {
+            cabNum: '1',
+            cabDimension: {
+              width: 800,
+              height: 740,
+              depth: 620
+            },
+            cabType: 'open-shelf'
+          }
+        },
+        {
+          qty: 2,
+          desc: 'rail',
+          cutHt: 767,
+          cutWd: 99,
+          finHt: 767,
+          finWd: 100,
+          material: 'WHITE16',
+          edge: {
+            L: true,
+            R: false,
+            T: false,
+            B: false
+          },
+          cabInfo: {
+            cabNum: '1',
+            cabDimension: {
+              width: 800,
+              height: 740,
+              depth: 620
+            },
+            cabType: 'open-shelf'
+          }
+        },
+        {
+          qty: 1,
+          desc: 'shelf adjust',
+          cutHt: 766,
+          cutWd: 563,
+          finHt: 766,
+          finWd: 564,
+          material: 'WHITE16',
+          edge: {
+            L: true,
+            R: false,
+            T: false,
+            B: false
+          },
+          cabInfo: {
+            cabNum: '1',
+            cabDimension: {
+              width: 800,
+              height: 740,
+              depth: 620
+            },
+            cabType: 'open-shelf'
+          }
+        }
+      ]
+    },
+    {
+      cabNum: '2',
+      cabDimension: {
+        width: 400,
+        height: 740,
+        depth: 620
+      },
+      cabType: 'bin',
+      pieces: [
+        {
+          qty: 1,
+          desc: 'back',
+          cutHt: 740,
+          cutWd: 399,
+          finHt: 740,
+          finWd: 399,
+          material: 'WHITE16',
+          edge: {
+            L: false,
+            R: false,
+            T: false,
+            B: false
+          },
+          cabInfo: {
+            cabNum: '2',
+            cabDimension: {
+              width: 400,
+              height: 740,
+              depth: 620
+            },
+            cabType: 'bin',
+          }
+        },
+        {
+          qty: 1,
+          desc: 'end',
+          cutHt: 740,
+          cutWd: 583,
+          finHt: 740,
+          finWd: 584,
+          material: 'WHITE16',
+          edge: {
+            L: true,
+            R: false,
+            T: false,
+            B: false
+          },
+          cabInfo: {
+            cabNum: '2',
+            cabDimension: {
+              width: 400,
+              height: 740,
+              depth: 620
+            },
+            cabType: 'bin',
+          }
+        },
+        {
+          qty: 1,
+          desc: 'end',
+          cutHt: 740,
+          cutWd: 583,
+          finHt: 740,
+          finWd: 584,
+          material: 'WHITE16',
+          edge: {
+            L: false,
+            R: true,
+            T: false,
+            B: false
+          },
+          cabInfo: {
+            cabNum: '2',
+            cabDimension: {
+              width: 400,
+              height: 740,
+              depth: 620
+            },
+            cabType: 'bin',
+          }
+        },
+        {
+          qty: 1,
+          desc: 'drawer front bottom',
+          cutHt: 506,
+          cutWd: 393,
+          finHt: 510,
+          finWd: 397,
+          material: 'DRAWERS',
+          edge: {
+            L: true,
+            R: true,
+            T: true,
+            B: true
+          },
+          cabInfo: {
+            cabNum: '2',
+            cabDimension: {
+              width: 400,
+              height: 740,
+              depth: 620
+            },
+            cabType: 'bin',
+          }
+        }
       ]
     }
-
   ]
 }
 export default state;

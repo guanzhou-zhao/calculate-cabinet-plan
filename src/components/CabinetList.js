@@ -1,301 +1,80 @@
 import React, { Component } from 'react'
+import _ from 'lodash'
 
 export default class CabinetList extends Component {
+  getPieceRows(pieces) {
+    var rows = [];
+      var key = 0;
+      for (const p of pieces) {
+        rows.push(<tr key={`pieceRow${key++}`}>
+            <td>{p.qty}</td>
+            <td>{p.desc}</td>
+            <td>{p.cutHt}</td>
+            <td>{p.cutWd}</td>
+            <td>{p.finHt}</td>
+            <td>{p.finWd}</td>
+            <td>{p.material}</td>
+            <td>{p.edge.L ? 'Y' : ''}</td>
+            <td>{p.edge.R ? 'Y' : ''}</td>
+            <td>{p.edge.T ? 'Y' : ''}</td>
+            <td>{p.edge.B ? 'Y' : ''}</td>
+            <td> </td>
+            <td> </td>
+            <td></td>
+        </tr>)
+      }
+    return rows;
+  }
+  getCabinetDivs(calcResult) {
+      var cabinetDivs = [];
+      for (var i = 0; !_.isEmpty(calcResult) && i < calcResult.length; i++ ) {
+        cabinetDivs.push(
+
+            <div className="list-cabinet" key={`cabDiv${i}`}>
+                <span className="list-cabinet-num"> Cab#: {calcResult[i].cabNum} </span>
+                <div className="list-cabinet-detail">
+                    <div className="list-cabinet-dimension">
+                        <span>Width: {calcResult[i].cabDimension.width}</span>
+                        <span>Height: {calcResult[i].cabDimension.height}</span>
+                        <span>Depth: {calcResult[i].cabDimension.depth}</span>
+                    </div>
+                    <div className="list-cabinet-image">
+                        <img src="http://via.placeholder.com/150x150" alt="cabinet" /> </div>
+                    <div className="list-cabinet-detail">
+                        <table className="table table-hover">
+                          <tbody>
+                            <tr>
+                                <th>Qty</th>
+                                <th>Description</th>
+                                <th>CutHt</th>
+                                <th>CutWd</th>
+                                <th>FinHt</th>
+                                <th>FinWd</th>
+                                <th>Material</th>
+                                <th>L</th>
+                                <th>R</th>
+                                <th>T</th>
+                                <th>B</th>
+                                <th>HL</th>
+                                <th>HR</th>
+                                <th>Thk</th>
+                            </tr>
+                            {this.getPieceRows(calcResult[i].pieces)}
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        )
+      }
+    return cabinetDivs;
+  }
   render () {
+    var calcResult = this.props.calcResult;
+    console.log("calcResult", calcResult)
     return (
       <div className="list list-cabinets">
-          <div className="list-cabinet">
-              <span className="list-cabinet-num"> Cab#: 1 </span>
-              <div className="list-cabinet-detail">
-                  <div className="list-cabinet-dimension">
-                      <span>Width: 715</span>
-                      <span>Height: 740</span>
-                      <span>Depth: 600</span>
-                  </div>
-                  <div className="list-cabinet-image">
-                      <image src="http://via.placeholder.com/150x150" alt="cabinet" /> </div>
-                  <div className="list-cabinet-detail">
-                      <table className="table table-hover">
-                          <tr>
-                              <th>Qty</th>
-                              <th>Description</th>
-                              <th>CutHt</th>
-                              <th>CutWd</th>
-                              <th>FinHt</th>
-                              <th>FinWd</th>
-                              <th>Material</th>
-                              <th>L</th>
-                              <th>R</th>
-                              <th>T</th>
-                              <th>B</th>
-                              <th>HL</th>
-                              <th>HR</th>
-                              <th>Thk</th>
-                          </tr>
-                          <tr>
-                              <td>1</td>
-                              <td>BACK BASE</td>
-                              <td>710.0</td>
-                              <td>644.0</td>
-                              <td>710.0</td>
-                              <td>644.0</td>
-                              <td>WHITE16</td>
-                              <td></td>
-                              <td></td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td>1.0</td>
-                          </tr>
-                          <tr>
-                              <td>1</td>
-                              <td>BTM BASE</td>
-                              <td>612.0</td>
-                              <td>533.0</td>
-                              <td>612.0</td>
-                              <td>554.0</td>
-                              <td>WHITE16</td>
-                              <td>Y</td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td>1.0</td>
-                          </tr>
-                          <tr>
-                              <td>1</td>
-                              <td>END BASE</td>
-                              <td>710.0</td>
-                              <td>553.0</td>
-                              <td>710.0</td>
-                              <td>554.0</td>
-                              <td>WHITE16</td>
-                              <td>Y</td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td>1.0</td>
-                          </tr>
-                          <tr>
-                              <td>1</td>
-                              <td>END BASE</td>
-                              <td>710.0</td>
-                              <td>553.0</td>
-                              <td>710.0</td>
-                              <td>554.0</td>
-                              <td>WHITE16</td>
-                              <td> </td>
-                              <td>Y</td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td>1.0</td>
-                          </tr>
-                          <tr>
-                              <td>2</td>
-                              <td>RAIL</td>
-                              <td>612.0</td>
-                              <td>98.0</td>
-                              <td>612.0</td>
-                              <td>100.0</td>
-                              <td>WHITE16</td>
-                              <td>Y</td>
-                              <td>Y</td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td>1.0</td>
-                          </tr>
-                          <tr>
-                              <td>0</td>
-                              <td>TOP</td>
-                              <td>612.0</td>
-                              <td>533.0</td>
-                              <td>612.0</td>
-                              <td>554.0</td>
-                              <td>WHITE16</td>
-                              <td>Y</td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td>1.0</td>
-                          </tr>
-                          <tr>
-                              <td>1</td>
-                              <td>D BK BT</td>
-                              <td>147.0</td>
-                              <td>523.0</td>
-                              <td>148.0</td>
-                              <td>523.0</td>
-                              <td>WHITE16</td>
-                              <td>Y</td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td>1.0</td>
-                          </tr>
-                      </table>
-                  </div>
-
-              </div>
-
-          </div>
-          <div className="list-cabinet">
-              <span className="list-cabinet-num"> Cab#: 2 </span>
-              <div className="list-cabinet-detail">
-                  <div className="list-cabinet-dimension">
-                      <span>Width: 715</span>
-                      <span>Height: 740</span>
-                      <span>Depth: 600</span>
-                  </div>
-                  <div className="list-cabinet-image">
-                      <image src="http://via.placeholder.com/150x150" alt="cabinet" /> </div>
-                  <div className="list-cabinet-detail">
-                      <table className="table table-hover">
-                          <tr>
-                              <th>Qty</th>
-                              <th>Description</th>
-                              <th>CutHt</th>
-                              <th>CutWd</th>
-                              <th>FinHt</th>
-                              <th>FinWd</th>
-                              <th>Material</th>
-                              <th>L</th>
-                              <th>R</th>
-                              <th>T</th>
-                              <th>B</th>
-                              <th>HL</th>
-                              <th>HR</th>
-                              <th>Thk</th>
-                          </tr>
-                          <tr>
-                              <td>1</td>
-                              <td>BACK BASE</td>
-                              <td>710.0</td>
-                              <td>644.0</td>
-                              <td>710.0</td>
-                              <td>644.0</td>
-                              <td>WHITE16</td>
-                              <td></td>
-                              <td></td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td>1.0</td>
-                          </tr>
-                          <tr>
-                              <td>1</td>
-                              <td>BTM BASE</td>
-                              <td>612.0</td>
-                              <td>533.0</td>
-                              <td>612.0</td>
-                              <td>554.0</td>
-                              <td>WHITE16</td>
-                              <td>Y</td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td>1.0</td>
-                          </tr>
-                          <tr>
-                              <td>1</td>
-                              <td>END BASE</td>
-                              <td>710.0</td>
-                              <td>553.0</td>
-                              <td>710.0</td>
-                              <td>554.0</td>
-                              <td>WHITE16</td>
-                              <td>Y</td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td>1.0</td>
-                          </tr>
-                          <tr>
-                              <td>1</td>
-                              <td>END BASE</td>
-                              <td>710.0</td>
-                              <td>553.0</td>
-                              <td>710.0</td>
-                              <td>554.0</td>
-                              <td>WHITE16</td>
-                              <td> </td>
-                              <td>Y</td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td>1.0</td>
-                          </tr>
-                          <tr>
-                              <td>2</td>
-                              <td>RAIL</td>
-                              <td>612.0</td>
-                              <td>98.0</td>
-                              <td>612.0</td>
-                              <td>100.0</td>
-                              <td>WHITE16</td>
-                              <td>Y</td>
-                              <td>Y</td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td>1.0</td>
-                          </tr>
-                          <tr>
-                              <td>0</td>
-                              <td>TOP</td>
-                              <td>612.0</td>
-                              <td>533.0</td>
-                              <td>612.0</td>
-                              <td>554.0</td>
-                              <td>WHITE16</td>
-                              <td>Y</td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td>1.0</td>
-                          </tr>
-                          <tr>
-                              <td>1</td>
-                              <td>D BK BT</td>
-                              <td>147.0</td>
-                              <td>523.0</td>
-                              <td>148.0</td>
-                              <td>523.0</td>
-                              <td>WHITE16</td>
-                              <td>Y</td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td> </td>
-                              <td>1.0</td>
-                          </tr>
-                      </table>
-                  </div>
-
-              </div>
-
-          </div>
+          {this.getCabinetDivs(calcResult)}
       </div>
     )
   }
