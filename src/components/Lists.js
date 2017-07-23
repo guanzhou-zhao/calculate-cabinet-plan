@@ -5,7 +5,7 @@ import QuantityList from './QuantityList'
 export default class Lists extends Component {
   getActiveList(activeListName, result) {
     var activeList = <CabinetList />;
-    switch (activeListName, result) {
+    switch (activeListName) {
       case "cab":
         activeList = <CabinetList calcResult = {result}/>;
         break;
@@ -19,6 +19,7 @@ export default class Lists extends Component {
         activeList = <CabinetList calcResult = {result}/>;
         break;
     }
+
     return activeList;
   }
   render() {

@@ -71,7 +71,6 @@ export default class CabinetList extends Component {
   }
   render () {
     var calcResult = this.props.calcResult;
-    console.log("calcResult", calcResult)
     return (
       <div className="list list-cabinets">
           {this.getCabinetDivs(calcResult)}

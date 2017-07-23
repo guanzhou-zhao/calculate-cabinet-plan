@@ -8,7 +8,6 @@ export default class App extends Component {
     this.state = fakeState;
   }
   render () {
-    console.log(this.state.calcResult)
     return (
       <div>
         <ControlForm
@@ -16,7 +15,7 @@ export default class App extends Component {
           calcInfo = {this.state.calcInfo} />
         <Lists
         calcResult = {this.state.calcResult}
-        activeList = {this.state.activeLsit} />
+        activeList = {this.state.activeList} />
       </div>
     )
   }

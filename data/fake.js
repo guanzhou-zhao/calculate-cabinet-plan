@@ -24,7 +24,7 @@ var state = {
       depth: 553
     }
   },
-  activeList: 'cab',
+  activeList: 'dimension',
   calcResult: [
     {
       cabNum: '1',
@@ -90,7 +90,7 @@ var state = {
           cutWd: 393.5,
           finHt: 710,
           finWd: 397.5,
-          material: 'Doors',
+          material: 'DOORS',
           edge: {
             L: true,
             R: true,
@@ -114,7 +114,7 @@ var state = {
           cutWd: 393.5,
           finHt: 710,
           finWd: 397.5,
-          material: 'Doors',
+          material: 'DOORS',
           edge: {
             L: true,
             R: true,
@@ -242,7 +242,7 @@ var state = {
           qty: 1,
           desc: 'back',
           cutHt: 740,
-          cutWd: 399,
+          cutWd: 390,
           finHt: 740,
           finWd: 399,
           material: 'WHITE16',
