@@ -24,7 +24,7 @@ var state = {
       depth: 553
     }
   },
-  activeList: 'dimension',
+  activeList: 'quantity',
   calcResult: [
     {
       cabNum: '1',
@@ -36,10 +36,10 @@ var state = {
       cabType: 'open-shelf',
       pieces: [
         {
-          qty: 1,
+          qty: 9,
           desc: 'back',
           cutHt: 740,
-          cutWd: 799,
+          cutWd: 390,
           finHt: 740,
           finWd: 740,
           material: 'WHITE16',

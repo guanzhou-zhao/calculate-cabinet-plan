@@ -3,9 +3,10 @@ import React, { Component } from 'react'
 export default class DimensionList extends Component {
   getGroupRows(pieces) {
     var rows = [];
+    var key = 0;
     for (const p of pieces) {
       rows.push(
-        <tr>
+        <tr key={key++}>
             <td>{p.qty}</td>
             <td>{p.desc}</td>
             <td>{p.cabInfo.cabNum}</td>
@@ -27,7 +28,7 @@ export default class DimensionList extends Component {
   }
   getGroupDiv(group, groupName) {
     return (
-      <div className={`list-dimension-group list-dimension-group-${groupName}`}>
+      <div className={`list-dimension-group list-dimension-group-${groupName}`} key={groupName}>
           <span className="list-dimension-group-name">{groupName.toUpperCase()}</span>
           <div className="list-dimension-group-detail">
               <table className="table table-hover">
