@@ -6,6 +6,12 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = fakeState;
+    this.handleListChange = this.handleListChange.bind(this);
+  }
+  handleListChange(newActiveList) {
+    this.setState({
+      activeList: newActiveList
+    });
   }
   render () {
     return (
@@ -14,6 +20,7 @@ export default class App extends Component {
           customer = {this.state.customer}
           calcInfo = {this.state.calcInfo} />
         <Lists
+        handleListChange = {this.handleListChange}
         calcResult = {this.state.calcResult}
         activeList = {this.state.activeList} />
       </div>

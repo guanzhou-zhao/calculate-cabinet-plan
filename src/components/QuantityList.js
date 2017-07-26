@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 export default class QuantityList extends Component {
-  getGroupRows(map, grqoupName) {
+  getGroupRows(map, groupName) {
     var groupRows = [];
 
     map.forEach( function (value, k, m){
