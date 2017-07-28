@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ControlForm from './ControlForm'
 import Lists from './Lists'
 import fakeState from '../../data/fake'
+import rules from '../../data/rules'
 export default class App extends Component {
   constructor(props) {
     super(props);
