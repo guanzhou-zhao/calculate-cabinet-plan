@@ -4,6 +4,7 @@ export default class ControlForm extends Component {
   render() {
     var customer = this.props.customer;
     var calcInfo = this.props.calcInfo;
+    var handleCalcDimensionChange = this.props.handleCalcDimensionChange;
     return (
       <div className="l-top ctl">
           <div className="ctl-part">
@@ -16,10 +17,24 @@ export default class ControlForm extends Component {
               </div>
           </div>
           <div className="ctl-part">
-              <span className="ctl-part-header">Top or Bottom Cabinet</span>
+              <span className="ctl-part-header">Board Material</span>
               <div className="ctl-part-inputs">
-                  <input type="button" defaultValue="Top Cabinet" className={calcInfo.isGround ? ' ' : 'button-isActive'}/>
-                  <input type="button" defaultValue="Bottom Cabinet" className={calcInfo.isGround ? 'button-isActive' : ''}/>
+                  <input type="button" defaultValue="WHITE16" className={calcInfo.is16 ? 'button-isActive' : ''}/>
+                  <input type="button" defaultValue="COLOUR18" className={calcInfo.is16 ? ' ' : 'button-isActive'}/>
+              </div>
+          </div>
+          <div className="ctl-part">
+              <span className="ctl-part-header">Top Board or Rail</span>
+              <div className="ctl-part-inputs">
+                  <input type="button" defaultValue="Rail" className={calcInfo.isRail ? 'button-isActive' : ''}/>
+                  <input type="button" defaultValue="Top Board" className={calcInfo.isRail ? ' ' : 'button-isActive'}/>
+              </div>
+          </div>
+          <div className="ctl-part">
+              <span className="ctl-part-header">Edge Thickness</span>
+              <div className="ctl-part-inputs">
+                  <input type="button" defaultValue="1mm" className={calcInfo.is1mm ? 'button-isActive' : ''}/>
+                  <input type="button" defaultValue="2mm" className={calcInfo.is1mm ? ' ' : 'button-isActive'}/>
               </div>
           </div>
           <div className="ctl-part">
@@ -45,9 +60,12 @@ export default class ControlForm extends Component {
           <div className="ctl-part">
               <span className="ctl-part-header">Dimension of Cabinet</span>
               <div className="ctl-part-inputs">
-                  <input type="number" placeholder="Cabinet Width" defaultValue={calcInfo.dimension.width}/>
-                  <input type="number" placeholder="Cabinet Height" defaultValue={calcInfo.dimension.height}/>
-                  <input type="number" placeholder="Cabinet Depth" defaultValue={calcInfo.dimension.depth}/>
+                  Cabinet Width:<input type="number" placeholder="Cabinet Width" defaultValue={calcInfo.dimension.width} onChange={(e)=>{handleCalcDimensionChange('width', e.target.value)}}/>
+                  Cabinet Height:<input type="number" placeholder="Cabinet Height" defaultValue={calcInfo.dimension.height} onChange={(e)=>{handleCalcDimensionChange('height', e.target.value)}}/>
+                  Cabinet Depth:<input type="number" placeholder="Cabinet Depth" defaultValue={calcInfo.dimension.depth} onChange={(e)=>{handleCalcDimensionChange('depth', e.target.value)}}/>
+              </div>
+              <div>
+                {`width height depth: ${calcInfo.dimension.width} ${calcInfo.dimension.height} ${calcInfo.dimension.depth}`}
               </div>
           </div>
           <div className="ctl-part">
