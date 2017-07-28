@@ -15,7 +15,9 @@ var state = {
     ]
   },
   calcInfo: {
-    isGround: true,
+    is16: true,
+    isRail: true,
+    is1mm: true,
     cabType: 'dr',
     doorType: '',
     dimension: {
