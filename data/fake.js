@@ -21,9 +21,9 @@ var state = {
     cabType: 'dr',
     doorType: '',
     dimension: {
-      width: 650,
+      width: 910,
       height: 710,
-      depth: 553
+      depth: 570
     }
   },
   activeList: 'quantity',

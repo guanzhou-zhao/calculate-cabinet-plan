@@ -3,6 +3,7 @@ import ControlForm from './ControlForm'
 import Lists from './Lists'
 import fakeState from '../../data/fake'
 import rules from '../../data/rules'
+import getCab from '../tools/cabMaker'
 import update from 'immutability-helper';
 export default class App extends Component {
   constructor(props) {
@@ -10,6 +11,7 @@ export default class App extends Component {
     this.state = fakeState;
     this.handleListChange = this.handleListChange.bind(this);
     this.handleCalcDimensionChange = this.handleCalcDimensionChange.bind(this);
+    this.handleCalculate = this.handleCalculate.bind(this);
   }
   handleListChange(newActiveList) {
     this.setState({
@@ -26,11 +28,19 @@ export default class App extends Component {
     });
     this.setState(newState)
   }
+  handleCalculate() {
+    var cab = getCab(this.state);
+    var newState = update(this.state, {
+      calcResult: {$push: [cab]}
+    });
+    this.setState(newState);
+  }
   render () {
     return (
       <div>
         <ControlForm
           handleCalcDimensionChange = {this.handleCalcDimensionChange}
+          handleCalculate = {this.handleCalculate}
           customer = {this.state.customer}
           calcInfo = {this.state.calcInfo} />
         <Lists
