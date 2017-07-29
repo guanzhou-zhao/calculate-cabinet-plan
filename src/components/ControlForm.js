@@ -5,6 +5,7 @@ export default class ControlForm extends Component {
     var customer = this.props.customer;
     var calcInfo = this.props.calcInfo;
     var handleCalcDimensionChange = this.props.handleCalcDimensionChange;
+    var handleCalculate = this.props.handleCalculate;
     return (
       <div className="l-top ctl">
           <div className="ctl-part">
@@ -71,7 +72,7 @@ export default class ControlForm extends Component {
           <div className="ctl-part">
               <span className="ctl-part-header">Operations</span>
               <div className="ctl-part-inputs">
-                  <input type="button" defaultValue="Calculate"/>
+                  <input type="button" defaultValue="Calculate" onClick={handleCalculate}/>
               </div>
           </div>
       </div>
