@@ -12,6 +12,7 @@ export default class App extends Component {
     this.handleListChange = this.handleListChange.bind(this);
     this.handleCalcDimensionChange = this.handleCalcDimensionChange.bind(this);
     this.handleCalculate = this.handleCalculate.bind(this);
+    this.handleButtonClick = this.handleButtonClick.bind(this);
   }
   handleListChange(newActiveList) {
     this.setState({
@@ -35,12 +36,21 @@ export default class App extends Component {
     });
     this.setState(newState);
   }
+  handleButtonClick(prop, value) {
+    var newState = update(this.state, {
+      calcInfo: {
+        [prop]:  {$set: value}
+      }
+    });
+    this.setState(newState);
+  }
   render () {
     return (
       <div>
         <ControlForm
           handleCalcDimensionChange = {this.handleCalcDimensionChange}
           handleCalculate = {this.handleCalculate}
+          handleButtonClick = {this.handleButtonClick}
           customer = {this.state.customer}
           calcInfo = {this.state.calcInfo} />
         <Lists

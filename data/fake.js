@@ -15,18 +15,20 @@ var state = {
     ]
   },
   calcInfo: {
-    is16: true,
+    isCab16: true,
+    isDoor16: false,
+    isCab1mm: true,
+    isDoor1mm: false,
     isRail: true,
-    is1mm: true,
     cabType: 'dr',
-    doorType: '',
+    doorType: 'two',
     dimension: {
       width: 910,
       height: 710,
       depth: 570
     }
   },
-  activeList: 'quantity',
+  activeList: 'cabinet',
   calcResult: [
     {
       cabNum: '1',

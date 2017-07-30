@@ -16,6 +16,10 @@ body {
   border: 1px solid #880;
 }
 
+.ctl-part.ctl-part-inline {
+  display: inline-block;
+}
+
 .ctl-part .button-isActive {
   background-color: #888;
 }
