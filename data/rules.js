@@ -6,19 +6,37 @@ export default {
         desc: 'back',
         qty: 1,
         cutHt: 'height',
-        cutWd: 'width-1'
+        cutWd: 'width-1',
+        edge: {
+          L: false,
+          R: false,
+          T: false,
+          B: false
+        }
       },
       {
         desc: 'end',
         qty: 2,
         cutHt: 'height',
-        cutWd: 'depth-b-e'
+        cutWd: 'depth-cabBoard-cabEdge',
+        edge: {
+          L: true,
+          R: false,
+          T: false,
+          B: false
+        }
       },
       {
         desc: 'bottom',
         qty: 1,
-        cutHt: 'width-b*2',
-        cutWd: 'depth-b-e'
+        cutHt: 'width-cabBoard*2',
+        cutWd: 'depth-cabBoard-cabEdge',
+        edge: {
+          L: true,
+          R: false,
+          T: false,
+          B: false
+        }
       }
     ]
   },
@@ -28,8 +46,14 @@ export default {
       {
         desc: 'rail',
         qty: 2,
-        cutHt: 'width-b*2',
-        cutWd: '100'
+        cutHt: 'width-cabBoard*2',
+        cutWd: '100',
+        edge: {
+          L: true,
+          R: false,
+          T: false,
+          B: false
+        }
       }
     ]
   },
@@ -40,25 +64,49 @@ export default {
         desc: 'drawer bottom top',
         qty: 1,
         cutHt: 'width-108',
-        cutWd: '442'
+        cutWd: '442',
+        edge: {
+          L: false,
+          R: false,
+          T: false,
+          B: false
+        }
       },
       {
         desc: 'drawer bottom',
         qty: 2,
         cutHt: 'width-108',
-        cutWd: '492'
+        cutWd: '492',
+        edge: {
+          L: false,
+          R: false,
+          T: false,
+          B: false
+        }
       },
       {
         desc: 'drawer back top',
         qty: 1,
         cutHt: '70',
-        cutWd: 'width-120'
+        cutWd: 'width-120',
+        edge: {
+          L: false,
+          R: false,
+          T: true,
+          B: false
+        }
       },
       {
         desc: 'drawer back',
         qty: 2,
         cutHt: '145',
-        cutWd: 'width-120'
+        cutWd: 'width-120',
+        edge: {
+          L: false,
+          R: false,
+          T: true,
+          B: false
+        }
       }
     ]
   },
@@ -69,13 +117,27 @@ export default {
         desc: 'drawer front top',
         qty: 1,
         cutHt: '168',
-        cutWd: 'width-e*2-2'
+        cutWd: 'width-doorEdge*2-2',
+        isDoorOrDrawer: true,
+        edge: {
+          L: true,
+          R: true,
+          T: true,
+          B: true
+        }
       },
       {
         desc: 'drawer front',
         qty: 2,
         cutHt: '262',
-        cutWd: 'width-e*2-2'
+        cutWd: 'width-doorEdge*2-2',
+        isDoorOrDrawer: true,
+        edge: {
+          L: true,
+          R: true,
+          T: true,
+          B: true
+        }
       }
     ]
   }

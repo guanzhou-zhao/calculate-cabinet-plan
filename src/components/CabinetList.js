@@ -20,7 +20,7 @@ export default class CabinetList extends Component {
             <td>{p.edge.B ? 'Y' : ''}</td>
             <td> </td>
             <td> </td>
-            <td></td>
+            <td>{p.edge.thk}</td>
         </tr>)
       }
     return rows;
@@ -51,10 +51,10 @@ export default class CabinetList extends Component {
                                 <th>FinHt</th>
                                 <th>FinWd</th>
                                 <th>Material</th>
-                                <th>L</th>
-                                <th>R</th>
-                                <th>T</th>
-                                <th>B</th>
+                                <th>Left</th>
+                                <th>Right</th>
+                                <th>Top</th>
+                                <th>Bottom</th>
                                 <th>HL</th>
                                 <th>HR</th>
                                 <th>Thk</th>
