@@ -42,6 +42,7 @@ export default class App extends Component {
         [prop]:  {$set: value}
       }
     });
+    console.log(`app.js handleButtonClick ${JSON.stringify(newState)}`)
     this.setState(newState);
   }
   render () {

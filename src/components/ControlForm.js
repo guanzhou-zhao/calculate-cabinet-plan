@@ -18,40 +18,51 @@ export default class ControlForm extends Component {
                   <input type="text" name="board-color" placeholder="18mm board color" defaultValue={customer.colorBoard[0].color}/>
               </div>
           </div>
-          <div className="ctl-part ctl-part-inline">
+          <div className="ctl-part">
+            <div className="ctl-part-inline">
               <span className="ctl-part-header">Cabinet Board Material</span>
               <div className="ctl-part-inputs">
                   <input type="button" onClick={()=>{handleButtonClick('isCab16', true)}} defaultValue="WHITE16" className={calcInfo.isCab16 ? 'button-isActive' : ''}/>
                   <input type="button" onClick={()=>{handleButtonClick('isCab16', false)}} defaultValue="COLOUR18" className={calcInfo.isCab16 ? ' ' : 'button-isActive'}/>
               </div>
-          </div>
-          <div className="ctl-part ctl-part-inline">
+            </div>
+            <div className="ctl-part-inline">
               <span className="ctl-part-header">Door and Drawer Board Material</span>
               <div className="ctl-part-inputs">
                   <input type="button" onClick={()=>{handleButtonClick('isDoor16',true)}} defaultValue="WHITE16" className={calcInfo.isDoor16 ? 'button-isActive' : ''}/>
                   <input type="button" onClick={()=>{handleButtonClick('isDoor16', false)}} defaultValue="COLOUR18" className={calcInfo.isDoor16 ? ' ' : 'button-isActive'}/>
               </div>
-          </div>
-          <div className="ctl-part ctl-part-inline">
+            </div>
+            <div className="ctl-part-inline">
               <span className="ctl-part-header">Cabinet Edge Thickness</span>
               <div className="ctl-part-inputs">
                   <input type="button" onClick={()=>{handleButtonClick('isCab1mm', true)}} defaultValue="1" className={calcInfo.isCab1mm ? 'button-isActive' : ''}/>
                   <input type="button" onClick={()=>{handleButtonClick('isCab1mm', false)}} defaultValue="2" className={calcInfo.isCab1mm ? ' ' : 'button-isActive'}/>
               </div>
-          </div>
-          <div className="ctl-part ctl-part-inline">
+            </div>
+            <div className="ctl-part-inline">
               <span className="ctl-part-header">Door and Drawer Edge Thickness</span>
               <div className="ctl-part-inputs">
                   <input type="button" onClick={()=>{handleButtonClick('isDoor1mm', true)}} defaultValue="1" className={calcInfo.isDoor1mm ? 'button-isActive' : ''}/>
                   <input type="button" onClick={()=>{handleButtonClick('isDoor1mm', false)}} defaultValue="2" className={calcInfo.isDoor1mm ? ' ' : 'button-isActive'}/>
               </div>
+            </div>
           </div>
           <div className="ctl-part">
+            <div className="ctl-part-inline">
               <span className="ctl-part-header">Top Board or Rail</span>
               <div className="ctl-part-inputs">
                   <input type="button" onClick={()=>{handleButtonClick('isRail', true)}} defaultValue="Rail" className={calcInfo.isRail ? 'button-isActive' : ''}/>
                   <input type="button" onClick={()=>{handleButtonClick('isRail', false)}} defaultValue="Top Board" className={calcInfo.isRail ? ' ' : 'button-isActive'}/>
               </div>
+            </div>
+            <div className="ctl-part-inline">
+              <span className="ctl-part-header">Under Sink or Not</span>
+              <div className="ctl-part-inputs">
+                  <input type="button" onClick={()=>{handleButtonClick('isUnderSink', true)}} defaultValue="Under Sink" className={calcInfo.isUnderSink ? 'button-isActive' : ''}/>
+                  <input type="button" onClick={()=>{handleButtonClick('isUnderSink', false)}} defaultValue="Not under sink" className={calcInfo.isUnderSink ? ' ' : 'button-isActive'}/>
+              </div>
+            </div>
           </div>
           <div className="ctl-part">
               <span className="ctl-part-header">Cabinet Type</span>
