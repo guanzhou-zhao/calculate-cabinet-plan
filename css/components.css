@@ -16,8 +16,9 @@ body {
   border: 1px solid #880;
 }
 
-.ctl-part.ctl-part-inline {
+.ctl-part .ctl-part-inline {
   display: inline-block;
+  margin-right: 40px;
 }
 
 .ctl-part .button-isActive {

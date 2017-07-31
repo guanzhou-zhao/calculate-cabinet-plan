@@ -7,7 +7,38 @@ export default function getCab(state) {
   cab.cabType = state.calcInfo.cabType;
   cab.pieces = [];
 
-  var cabRules = [...rules.cabinet.pieces, ...rules.rail.pieces, ...rules.drawer3.pieces, ...rules.drawerfront3.pieces];
+  var cabRules = [];
+  if (state.calcInfo.cabType == 'corner') {
+
+  } else {
+    cabRules.push(...rules.cabinet.pieces);
+  }
+  if (!state.calcInfo.isRail || state.calcInfo.cabType == 'plain') {
+    cabRules.push(...rules.top.pieces);
+  }
+  if (state.calcInfo.isRail && state.calcInfo.cabType != 'plain') {
+    if (state.calcInfo.isUnderSink) {
+      cabRules.push(...rules.underSinkRail.pieces);
+    } else {
+      cabRules.push(...rules.rail.pieces);
+    }
+  }
+  switch (state.calcInfo.cabType) {
+    case 'dr':
+      cabRules.push(...rules.drawer3.pieces, ...rules.drawerfront3.pieces);
+      break;
+    case 'fixed-shelf':
+      cabRules.push(...rules.fixedShelf.pieces);
+      break;
+    case 'open-shelf':
+      cabRules.push(...rules.openShelf.pieces);
+      break;
+    case 'bin':
+      cabRules.push(...rules.binDrawer.pieces, ...rules.fixedShelf.pieces);
+      break;
+    default:
+      break;
+  }
 
   var width = state.calcInfo.dimension.width;
   var height = state.calcInfo.dimension.height;
