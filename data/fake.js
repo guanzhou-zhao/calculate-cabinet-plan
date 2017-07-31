@@ -20,10 +20,11 @@ var state = {
     isCab1mm: true,
     isDoor1mm: false,
     isRail: true,
+    isUnderSink: false,
     cabType: 'dr',
     doorType: 'two',
     dimension: {
-      width: 910,
+      width: 720,
       height: 710,
       depth: 570
     }
