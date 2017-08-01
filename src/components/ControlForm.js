@@ -7,6 +7,7 @@ export default class ControlForm extends Component {
     var handleCalcDimensionChange = this.props.handleCalcDimensionChange;
     var handleCalculate = this.props.handleCalculate;
     var handleButtonClick = this.props.handleButtonClick;
+    var handleValueChange = this.props.handleValueChange;
     return (
       <div className="l-top ctl">
           <div className="ctl-part">
@@ -76,13 +77,26 @@ export default class ControlForm extends Component {
               </div>
           </div>
           <div className="ctl-part">
+            <div className="ctl-part-inline">
+            <span className="ctl-part-header">Left Right Gap</span>
+              <div className="ctl-part-inputs">
+                <input type="number" placeholder="Door left right gap" defaultValue={calcInfo.horizontalGap} onChange={(e)=>{handleValueChange(['calcInfo', 'horizontalGap'], e.target.value)}}/>mm
+              </div>
+            </div>
+            <div className="ctl-part-inline">
+              <span className="ctl-part-header">Top down gap:</span>
+              <div className="ctl-part-inputs">
+                <input type="number" placeholder="top down gap" defaultValue={calcInfo.verticalGap} onChange={(e)=>{handleValueChange(['calcInfo', 'verticalGap'], e.target.value)}}/>mm
+              </div>
+            </div>
+            <div className="ctl-part-inline">
               <span className="ctl-part-header">Door Type</span>
               <div className="ctl-part-inputs">
                   <input type="button" onClick={()=>{handleButtonClick('doorType', 'two')}} defaultValue="two doors (left and right open)" className={calcInfo.doorType == 'two' ? 'button-isActive' : ''}/>
-                  <input type="button" onClick={()=>{handleButtonClick('doorType', 'single')}} defaultValue="single door (left or right open)" className={calcInfo.doorType == 'single' ? 'button-isActive' : ''}/>
-                  <input type="button" onClick={()=>{handleButtonClick('doorType', 'tilt')}} defaultValue="single door (tilt open)" className={calcInfo.doorType == 'tilt' ? 'button-isActive' : ''}/>
-                  <input type="button" onClick={()=>{handleButtonClick('doorType', 'tilt2')}} defaultValue="single door tilt open (two pieces)" className={calcInfo.doorType == 'tilt2' ? 'button-isActive' : ''}/>
+                  <input type="button" onClick={()=>{handleButtonClick('doorType', 'single')}} defaultValue="single door (left, right or tilt open)" className={calcInfo.doorType == 'single' ? 'button-isActive' : ''}/>
+                  <input type="button" onClick={()=>{handleButtonClick('doorType', 'single2')}} defaultValue="single door (two pieces)" className={calcInfo.doorType == 'single2' ? 'button-isActive' : ''}/>
               </div>
+            </div>
           </div>
           <div className="ctl-part">
               <span className="ctl-part-header">Dimension of Cabinet</span>
