@@ -13,6 +13,7 @@ export default class App extends Component {
     this.handleCalcDimensionChange = this.handleCalcDimensionChange.bind(this);
     this.handleCalculate = this.handleCalculate.bind(this);
     this.handleButtonClick = this.handleButtonClick.bind(this);
+    this.handleValueChange = this.handleValueChange.bind(this);
   }
   handleListChange(newActiveList) {
     this.setState({
@@ -45,6 +46,27 @@ export default class App extends Component {
     console.log(`app.js handleButtonClick ${JSON.stringify(newState)}`)
     this.setState(newState);
   }
+  handleValueChange(properties, value) {
+    var updateState = {};
+    var temp = {};
+    for (var i=0; i<properties.length; i++) {
+      if (i == 0) {
+        temp = updateState[properties[i]] = {};
+      } else {
+        temp[properties[i]] = {};
+        temp = temp[properties[i]];
+      }
+
+      console.log(`app.js handleButtonClick updateState ${JSON.stringify(updateState)}`)
+      if (i == properties.length - 1) {
+        temp[properties[i]] = {$set: value};
+        console.log(`app.js handleButtonClick temp ${JSON.stringify(temp)}`)
+      }
+    }
+
+    var newState = update(this.state, updateState);
+    this.setState(newState);
+  }
   render () {
     return (
       <div>
@@ -52,6 +74,7 @@ export default class App extends Component {
           handleCalcDimensionChange = {this.handleCalcDimensionChange}
           handleCalculate = {this.handleCalculate}
           handleButtonClick = {this.handleButtonClick}
+          handleValueChange = {this.handleValueChange}
           customer = {this.state.customer}
           calcInfo = {this.state.calcInfo} />
         <Lists

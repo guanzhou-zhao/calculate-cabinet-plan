@@ -22,6 +22,8 @@ var state = {
     isRail: true,
     isUnderSink: false,
     cabType: 'dr',
+    horizontalGap: 5,
+    verticalGap: 3,
     doorType: 'two',
     dimension: {
       width: 720,
