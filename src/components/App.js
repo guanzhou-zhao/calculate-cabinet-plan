@@ -46,24 +46,7 @@ export default class App extends Component {
     console.log(`app.js handleButtonClick ${JSON.stringify(newState)}`)
     this.setState(newState);
   }
-  handleValueChange(properties, value) {
-    var updateState = {};
-    var temp = {};
-    for (var i=0; i<properties.length; i++) {
-      if (i == 0) {
-        temp = updateState[properties[i]] = {};
-      } else {
-        temp[properties[i]] = {};
-        temp = temp[properties[i]];
-      }
-
-      console.log(`app.js handleButtonClick updateState ${JSON.stringify(updateState)}`)
-      if (i == properties.length - 1) {
-        temp[properties[i]] = {$set: value};
-        console.log(`app.js handleButtonClick temp ${JSON.stringify(temp)}`)
-      }
-    }
-
+  handleValueChange(updateState) {
     var newState = update(this.state, updateState);
     this.setState(newState);
   }
