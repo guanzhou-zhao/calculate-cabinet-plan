@@ -80,13 +80,25 @@ export default class ControlForm extends Component {
             <div className="ctl-part-inline">
             <span className="ctl-part-header">Left Right Gap</span>
               <div className="ctl-part-inputs">
-                <input type="number" placeholder="Door left right gap" defaultValue={calcInfo.horizontalGap} onChange={(e)=>{handleValueChange(['calcInfo', 'horizontalGap'], e.target.value)}}/>mm
+                <input type="number" placeholder="Door left right gap" defaultValue={calcInfo.horizontalGap} onChange={(e)=>{handleValueChange(
+                  {
+                    calcInfo: {
+                      horizontalGap: {$set: e.target.value}
+                    }
+                  }
+                )}}/>mm
               </div>
             </div>
             <div className="ctl-part-inline">
               <span className="ctl-part-header">Top down gap:</span>
               <div className="ctl-part-inputs">
-                <input type="number" placeholder="top down gap" defaultValue={calcInfo.verticalGap} onChange={(e)=>{handleValueChange(['calcInfo', 'verticalGap'], e.target.value)}}/>mm
+                <input type="number" placeholder="top down gap" defaultValue={calcInfo.verticalGap} onChange={(e)=>{handleValueChange(
+                  {
+                    calcInfo: {
+                      verticalGap: {$set: e.target.value}
+                    }
+                  }
+                )}}/>mm
               </div>
             </div>
             <div className="ctl-part-inline">
@@ -107,6 +119,7 @@ export default class ControlForm extends Component {
               </div>
               <div>
                 {`width height depth: ${calcInfo.dimension.width} ${calcInfo.dimension.height} ${calcInfo.dimension.depth}`}
+                {`   horizontalGap verticalGap: ${calcInfo.horizontalGap} ${calcInfo.verticalGap}`}
               </div>
           </div>
           <div className="ctl-part">
