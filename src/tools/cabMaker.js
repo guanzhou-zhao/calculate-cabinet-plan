@@ -40,6 +40,19 @@ export default function getCab(state) {
       break;
   }
 
+  switch (state.calcInfo.doorType) {
+    case 'two':
+      cabRules.push(...rules.twoDoorHorizontal.pieces);
+      break;
+    case 'single':
+      cabRules.push(...rules.singleDoor.pieces);
+      break;
+    case 'two2':
+     cabRules.push(...rules.twoDoorVertical.pieces);
+     break;
+    default:
+      break;
+  }
   var width = state.calcInfo.dimension.width;
   var height = state.calcInfo.dimension.height;
   var depth = state.calcInfo.dimension.depth;
@@ -47,6 +60,8 @@ export default function getCab(state) {
   var doorBoard = state.calcInfo.isDoor16 ? 16 : 18;
   var cabEdge = state.calcInfo.isCab1mm ? 1 : 2;
   var doorEdge = state.calcInfo.isDoor1mm ? 1 : 2;
+  var horizontalGap = state.calcInfo.horizontalGap;
+  var verticalGap = state.calcInfo.verticalGap;
   for (let pieceRule of cabRules) {
     var piece = {};
     piece.qty = pieceRule.qty;

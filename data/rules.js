@@ -258,5 +258,53 @@ export default {
         }
       }
     ]
+  },
+  singleDoor: {
+    pieces: [
+      {
+        desc: 'Door',
+        qty: 1,
+        cutHt: 'width-horizontalGap-doorEdge*2',
+        cutWd: 'height-verticalGap-doorEdge*2',
+        edge: {
+          L: true,
+          R: true,
+          T: true,
+          B: true
+        }
+      }
+    ]
+  },
+  twoDoorHorizontal: {
+    pieces: [
+      {
+        desc: 'Door',
+        qty: 2,
+        cutHt: '(width-horizontalGap-doorEdge*4)/2',
+        cutWd: 'height-verticalGap-doorEdge*2',
+        edge: {
+          L: true,
+          R: true,
+          T: true,
+          B: true
+        }
+      }
+    ]
+  },
+  twoDoorVertical: {
+    pieces: [
+      {
+        desc: 'Door',
+        qty: 2,
+        cutHt: 'width-horizontalGap-doorEdge*2',
+        cutWd: '(height-verticalGap-doorEdge*4)/2',
+        edge: {
+          L: true,
+          R: true,
+          T: true,
+          B: true
+        }
+      }
+    ]
   }
 }
