@@ -13,9 +13,27 @@ export default class ControlForm extends Component {
           <div className="ctl-part">
               <span className="ctl-part-header">Business info</span>
               <div className="ctl-part-inputs">
-                  <input type="text" name="business-code" placeholder="business code" defaultValue={customer.code}/>
-                  <input type="text" name="lot-num" placeholder="lot number" defaultValue={customer.lotNum}/>
-                  <input type="text" name="customer-name" placeholder="customer name" defaultValue={customer.name}/>
+                  <input type="text" name="business-code" placeholder="business code" defaultValue={customer.code} onChange={(e)=>{handleValueChange(
+                    {
+                      customer: {
+                        code: {$set: e.target.value}
+                      }
+                    }
+                  )}}/>
+                  <input type="text" name="lot-num" placeholder="lot number" defaultValue={customer.lotNum} onChange={(e)=>{handleValueChange(
+                    {
+                      customer: {
+                        lotNum: {$set: e.target.value}
+                      }
+                    }
+                  )}}/>
+                  <input type="text" name="customer-name" placeholder="customer name" defaultValue={customer.name} onChange={(e)=>{handleValueChange(
+                    {
+                      customer: {
+                        name: {$set: e.target.value}
+                      }
+                    }
+                  )}}/>
                   <input type="text" name="board-color" placeholder="18mm board color" defaultValue={customer.colorBoard[0].color}/>
               </div>
           </div>
@@ -106,7 +124,7 @@ export default class ControlForm extends Component {
               <div className="ctl-part-inputs">
                   <input type="button" onClick={()=>{handleButtonClick('doorType', 'two')}} defaultValue="two doors (left and right open)" className={calcInfo.doorType == 'two' ? 'button-isActive' : ''}/>
                   <input type="button" onClick={()=>{handleButtonClick('doorType', 'single')}} defaultValue="single door (left, right or tilt open)" className={calcInfo.doorType == 'single' ? 'button-isActive' : ''}/>
-                  <input type="button" onClick={()=>{handleButtonClick('doorType', 'single2')}} defaultValue="single door (two pieces)" className={calcInfo.doorType == 'single2' ? 'button-isActive' : ''}/>
+                  <input type="button" onClick={()=>{handleButtonClick('doorType', 'two2')}} defaultValue="two doors (tilt open)" className={calcInfo.doorType == 'two2' ? 'button-isActive' : ''}/>
               </div>
             </div>
           </div>
@@ -118,8 +136,9 @@ export default class ControlForm extends Component {
                   Cabinet Depth:<input type="number" placeholder="Cabinet Depth" defaultValue={calcInfo.dimension.depth} onChange={(e)=>{handleCalcDimensionChange('depth', e.target.value)}}/>
               </div>
               <div>
-                {`width height depth: ${calcInfo.dimension.width} ${calcInfo.dimension.height} ${calcInfo.dimension.depth}`}
-                {`   horizontalGap verticalGap: ${calcInfo.horizontalGap} ${calcInfo.verticalGap}`}
+                {`width height depth: ${calcInfo.dimension.width} ${calcInfo.dimension.height} ${calcInfo.dimension.depth}  `}
+                {`   horizontalGap verticalGap: ${calcInfo.horizontalGap} ${calcInfo.verticalGap}  `}
+                {`   customer info: ${customer.code},  ${customer.lotNum},  ${customer.name}  `}
               </div>
           </div>
           <div className="ctl-part">

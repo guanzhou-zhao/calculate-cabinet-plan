@@ -26,7 +26,7 @@ var state = {
     verticalGap: 3,
     doorType: 'two',
     dimension: {
-      width: 720,
+      width: 500,
       height: 710,
       depth: 570
     }
