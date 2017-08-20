@@ -1,5 +1,4 @@
 const electron = require('electron')
-var mongodb = require('mongodb');
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
@@ -7,18 +6,6 @@ const BrowserWindow = electron.BrowserWindow
 
 const path = require('path')
 const url = require('url')
-var db;
-function connectDB() {
-  // Initialize connection once
-  MongoClient.connect("mongodb://127.0.0.1:27017/myDB", function(err, database) {
-    if(err) throw err;
-
-    db = database;
-
-    // Start the application after the database connection is ready
-    console.log("database connected...");
-  });
-}
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
@@ -43,10 +30,6 @@ function createWindow () {
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
     mainWindow = null;
-    if (db != null) {
-      db.close();
-      db = null;
-    }
   })
 }
 
@@ -70,12 +53,7 @@ app.on('activate', function () {
   if (mainWindow === null) {
     createWindow()
   }
-  if (db === null) {
-    connectDB();
-  }
 })
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
-
-export default db;
