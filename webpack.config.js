@@ -1,6 +1,10 @@
 var path  = require('path');
 
 module.exports = {
+  target: 'electron-main',
+  node: {
+    __dirname: true
+  },
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
