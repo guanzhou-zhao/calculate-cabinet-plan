@@ -28,7 +28,7 @@ export default class App extends Component {
     if (_.isEmpty(this.state.categories)) {
       categoryList = <div> No category added.</div>
     } else {
-      categoryList = <CategoryList categories={this.state.categories}/>
+      categoryList = <CategoryList updateCategories={this.updateCategories} categoryInEditing={this.state.categoryInEditing} handleValueChange={this.updateState} categories={this.state.categories}/>
     }
     return categoryList;
   }

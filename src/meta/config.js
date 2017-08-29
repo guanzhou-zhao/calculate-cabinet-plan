@@ -4,5 +4,9 @@ export default {
     name: '',
     desc: ''
   },
-  categories: null
+  categories: null,
+  categoryInEditing: {
+    id: '',
+    obj: {}
+  }
 }
