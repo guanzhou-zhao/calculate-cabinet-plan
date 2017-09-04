@@ -8,5 +8,9 @@ export default {
   categoryInEditing: {
     id: '',
     obj: {}
+  },
+  addingCalculatePlan: {
+    isAdding: false,
+    addingFor: ''
   }
 }

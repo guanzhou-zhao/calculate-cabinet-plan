@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import Category from '../model/Category';
 import defaultState from './config';
+import CalculatePlanList from './CalculatePlanList'
 
 export default class CategoryList extends Component {
   constructor(props) {
@@ -39,6 +40,7 @@ export default class CategoryList extends Component {
                 () => {this.props.handleValueChange( {categoryInEditing: {id: { $set: ''}}}) }
               }
             />
+            <CalculatePlanList config={this.props.config} />
           </div>
         );
       } else {
@@ -51,13 +53,11 @@ export default class CategoryList extends Component {
         <div className="category-action">
         <input type="button" onClick={
           ()=>{
-              this.props.handleValueChange({'categoryInEditing': {'id': {$set: cat.id}}})
+              this.props.handleValueChange({'categoryInEditing': {'id': {$set: cat._id}}})
           }
         } value="Edit"/>
         </div>
-        <div className="category-content">
-
-        </div>
+        <CalculatePlanList cat={cat} config={this.props.config} />
         </div>);
       }
       return accumulator;

@@ -15,6 +15,9 @@ export default class App extends Component {
     this.showCategoryAddingForm = this.showCategoryAddingForm.bind(this);
     this.updateState = this.updateState.bind(this);
   }
+  componentDidMount() {
+    this.setState(update(this.state, {'updateState': {$set: this.updateState}}));
+  }
   updateCategories() {
     Category.find((err, categories) => {
       if (err) return console.error(err);
@@ -28,7 +31,13 @@ export default class App extends Component {
     if (_.isEmpty(this.state.categories)) {
       categoryList = <div> No category added.</div>
     } else {
-      categoryList = <CategoryList updateCategories={this.updateCategories} categoryInEditing={this.state.categoryInEditing} handleValueChange={this.updateState} categories={this.state.categories}/>
+      categoryList = <CategoryList
+                        updateCategories={this.updateCategories}
+                        categoryInEditing={this.state.categoryInEditing}
+                        handleValueChange={this.updateState}
+                        categories={this.state.categories}
+                        config={this.state}
+                      />
     }
     return categoryList;
   }
