@@ -17,6 +17,7 @@ export default class App extends Component {
   }
   componentDidMount() {
     this.setState(update(this.state, {'updateState': {$set: this.updateState}}));
+    this.setState(update(this.state, {'updateCategories': {$set: this.updateCategories}}));
   }
   updateCategories() {
     Category.find((err, categories) => {

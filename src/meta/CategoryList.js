@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import Category from '../model/Category';
 import defaultState from './config';
-import CalculatePlanList from './CalculatePlanList'
+import CabPlanList from './CabPlanList'
 
 export default class CategoryList extends Component {
   constructor(props) {
@@ -40,7 +40,7 @@ export default class CategoryList extends Component {
                 () => {this.props.handleValueChange( {categoryInEditing: {id: { $set: ''}}}) }
               }
             />
-            <CalculatePlanList config={this.props.config} />
+            <CabPlanList cat={cat} config={this.props.config} />
           </div>
         );
       } else {
@@ -49,15 +49,16 @@ export default class CategoryList extends Component {
         <h3 className="category-detail">
           <span className="category-name">{cat.name}    </span>
           <span className="category-desc">{cat.desc}</span>
+          <input type="button" onClick={
+            ()=>{
+                this.props.handleValueChange({'categoryInEditing': {'id': {$set: cat._id}}})
+            }
+          } value="Edit"/>
         </h3>
         <div className="category-action">
-        <input type="button" onClick={
-          ()=>{
-              this.props.handleValueChange({'categoryInEditing': {'id': {$set: cat._id}}})
-          }
-        } value="Edit"/>
+
         </div>
-        <CalculatePlanList cat={cat} config={this.props.config} />
+        <CabPlanList cat={cat} config={this.props.config} />
         </div>);
       }
       return accumulator;

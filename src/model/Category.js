@@ -3,7 +3,8 @@ var Schema = mongoose.Schema;
 
 var categorySchema = new Schema({
   name: String,
-  desc: String
+  desc: String,
+  cabs: [Schema.Types.Mixed]
 });
 
 // categorySchema.methods.findSimilarTypes = function(cb) {
